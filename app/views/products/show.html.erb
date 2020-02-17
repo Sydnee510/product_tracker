@@ -1,0 +1,7 @@
+
+Name: <%= @product.name %> <br>
+Description: <%= @product.description %> <br>
+Price : $ <%= @product.price %> <br>
+<%= link_to "Delete", product_path(@product), method: :delete, class: "destroy", data: {confirm: "Are you sure?"} %>
+
+

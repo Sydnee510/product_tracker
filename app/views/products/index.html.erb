@@ -1,0 +1,8 @@
+<h1>products<h1>
+<%= link_to 'Create Product', new_product_path %>
+<% @products.each do |product| %>
+    <ul>
+    <li><%= link_to product.name, product %></li>
+    <%= link_to "Delete", product_path(product), method: :delete, class: "destroy", data: {confirm: "Are you sure?"} %>
+    </ul>
+    <% end %>

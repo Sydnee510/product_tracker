@@ -1,1 +1,6 @@
 <h1>Queen Workx</h1>
+<% Product.all.each do |product| %>
+Name: <%= link_to product.name, product %> <br>
+Description: <%= product.description %> <br>
+Price : $ <%= product.price %> <br> <br>
+<% end %>
