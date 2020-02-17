@@ -4,5 +4,6 @@
     <ul>
     <li><%= link_to product.name, product %></li>
     <%= link_to "Delete", product_path(product), method: :delete, class: "destroy", data: {confirm: "Are you sure?"} %>
+    <%= link_to "Edit", edit_product_path(product) %>
     </ul>
     <% end %>
