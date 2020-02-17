@@ -13,4 +13,9 @@ class User < ApplicationRecord
             user.password = Devise.friendly_token[0,20]
         end
       end
+
+      has_many :products
+      has_many :orders, through: :products
+      has_many :categories, through: :products
+      has_many :shopping_carts, through: :products
 end
