@@ -14,8 +14,10 @@ class User < ApplicationRecord
         end
       end
 
-      has_many :products
-      has_many :orders, through: :products
-      has_many :categories, through: :products
-      has_many :shopping_carts, through: :products
+      # has_many :products
+      # has_many :categories
+      # has_many :products, through: :categories
+      # has_many :orders, through: :products
+      # has_many :categories, through: :products
+      # has_many :shopping_carts, through: :products
 end

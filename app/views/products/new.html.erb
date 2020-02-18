@@ -8,12 +8,12 @@
    
    
     <%= f.fields_for :category do |t| %>
-        <%= t.radio_button category_id = "1", :title %> 
-        <%= t.label :title, 'Body Collection', :value => 'body collection' %>
-        <%= t.radio_button category_id = "2", :title %>
-        <%= t.label :title, 'Hair Collection', :value => 'hair collection' %>
-        <%= t.radio_button category_id = "3", :title %>
-        <%= t.label :title, 'Wellness Collection', :value => 'wellness collection' %>
+        <%= t.radio_button category_id = "1", :category_id %> 
+        <%= t.label :title, 'Body Collection', :value => 'body_collection' %>
+        <%= t.radio_button category_id = "2", :hair_collection %>
+        <%= t.label :title, 'Hair Collection', :value => 'hair_collection' %>
+        <%= t.radio_button category_id = "3", :wellness_collection %>
+        <%= t.label :title, 'Wellness Collection', :value => 'wellness_collection' %>
         <% end %>
         <%=f.submit %>
         

@@ -1,7 +1,7 @@
-Category: <%= @product.category_id %> <br>
+<h4>Category: <%= @product.category_id %> <br>
 Name: <%= @product.name %> <br>
 Description: <%= @product.description %> <br>
 Price : $ <%= @product.price %> <br>
 <%= link_to "Delete", product_path(@product), method: :delete, class: "destroy", data: {confirm: "Are you sure?"} %>
-<%= link_to "Edit", edit_product_path(@product) %>
+<%= link_to "Edit", edit_product_path(@product) %></h4>
 
