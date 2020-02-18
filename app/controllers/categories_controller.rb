@@ -30,7 +30,7 @@ class CategoriesController < ProductsController
     end 
     private 
     def category_params
-        params.require(:category).permit(:title, :user_id)
+        params.require(:category).permit(:title)
     end 
 end
 

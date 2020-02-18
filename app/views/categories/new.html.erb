@@ -1,0 +1,10 @@
+<%= form_for(@category) do |f| %>
+    <%= f.radio_button :title, 'body collection' %> 
+    <%= f.label :title, 'Body Collection', :value => 'body' %>
+    <%= f.radio_button :title, 'hair collection' %>
+    <%= f.label :title, 'Hair Collection', :value => 'hair' %>
+    <%= f.radio_button :title, 'wellness collection' %>
+    <%= f.label :title, 'Wellness Collection', :value => 'wellness' %>
+    <%=f.submit %>
+    
+  <% end %>
