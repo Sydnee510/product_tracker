@@ -1,6 +1,12 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  has_many :products
+  has_many :categories, through: :products
+  validates :email, presence: true
+  validates :email, uniqueness: true
+  validates :password, presence: true
+  
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable
 
@@ -13,11 +19,5 @@ class User < ApplicationRecord
             user.password = Devise.friendly_token[0,20]
         end
       end
-
-      # has_many :products
-      # has_many :categories
-      # has_many :products, through: :categories
-      # has_many :orders, through: :products
-      # has_many :categories, through: :products
-      # has_many :shopping_carts, through: :products
+      
 end

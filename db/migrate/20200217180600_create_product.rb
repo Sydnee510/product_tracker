@@ -5,10 +5,9 @@ class CreateProduct < ActiveRecord::Migration[6.0]
       t.string :description
       t.integer :price
       t.timestamps null: false
-      t.belongs_to :category
-      t.belongs_to :user
-      t.belongs_to :order
-      t.belongs_to :shopping_cart
+      t.integer :category_id
+      t.integer :user_id
+  
      
     end
   end

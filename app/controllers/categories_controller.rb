@@ -2,7 +2,6 @@ class CategoriesController < ProductsController
     before_action :authenticate_user!
     def index 
         @categories = Category.all 
-        @products = Product.all
     end 
     def show 
         @category = Category.find(params[:id])
@@ -31,7 +30,7 @@ class CategoriesController < ProductsController
     end 
     private 
     def category_params
-        params.require(:category).permit(:title, :product_id)
+        params.require(:category).permit(:title)
     end 
 end
 

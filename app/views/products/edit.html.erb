@@ -5,15 +5,8 @@
     <%= f.text_field :description %> <br>
     <%= f.label :price %> 
     <%= f.text_field :price %> <br>
-   
-    <%= f.fields_for :category do |t| %>
-        <%= t.radio_button category_id = "1", :title %> 
-        <%= t.label :title, 'Body Collection', :value => 'body collection' %>
-        <%= t.radio_button category_id = "2", :title %>
-        <%= t.label :title, 'Hair Collection', :value => 'hair collection' %>
-        <%= t.radio_button category_id = "3", :title %>
-        <%= t.label :title, 'Wellness Collection', :value => 'wellness collection' %>
-        <% end %>
-        <%=f.submit %>
+    <%= f.label :category %>
+    <%= f.collection_select :category_id, Category.all.order(:title), :id, :title, include_blank: true %><br><br>
+    <%=f.submit %>
         
       <% end %>
