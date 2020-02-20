@@ -1,19 +1,29 @@
 <nav> 
 <style>
+body {
+  background-image: url('https://i.pinimg.com/originals/90/93/ed/9093ed6b9cda1cfa683ade4549a9feaa.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position:center;
+  
+ 
+}
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #988;
+  background-color: black;
 }
 li {
   float: left;
+  color: gold;
 }
 
 li a {
   display: block;
-  color: white;
+  color: gold;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -30,7 +40,7 @@ li a:hover {
   font-size: 16px;  
   border: none;
   outline: none;
-  color: white;
+  color: gold;
   padding: 14px 16px;
   background-color: inherit;
   font-family: inherit;
@@ -66,6 +76,7 @@ li a:hover {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+.i
 </style>
     <ul>
     <li><%= link_to "Home", root_path %></li>
@@ -74,22 +85,21 @@ li a:hover {
         <li><%= link_to "Login", new_user_session_path %></li>
     <% else %>
         
-        <div class="dropdown">
+    <div class="dropdown">
     <button class="dropbtn">Categories 
       <i class="fa fa-caret-down"></i>
     </button>
-    <div class="dropdown-content">
-      <a href="#">Body collection</a>
-      <a href="#">Hair collection</a>
-      <a href="#">Wellness collection</a>
-    </div>
-  </div> 
-        <li><%= link_to "Profile" %></li>
+      <div class="dropdown-content">
+      
+      <a href="categories/1">Body collection</a>
+      <a href="categories/2">Hair collection</a>
+      <a href="categories/3">Wellness collection</a>
+      </div>
+    </div> 
+        <li><%= link_to "Products", products_path %></li>
         <li><%= link_to "Logout", destroy_user_session_path, method:"delete" %></li>
-        WELCOME!! <%= current_user.username %><br>
+        <li>WELCOME!! <%= current_user.username %></li><br>
         <li><%= current_user.email %></li>
-        <i class="fa fa-shopping-cart"></i>
-        <button style="font-size:24px align:right">cart<i class="fa fa-shopping-cart"></i> </button>
         <% end %>
     </ul>
 </nav>

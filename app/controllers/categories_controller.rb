@@ -14,16 +14,20 @@ class CategoriesController < ProductsController
     end 
     def create 
         @category = Category.new(category_params)
-
-        # @category.save 
-        # redirect_to @category
         if  @category.save 
-       #@category.valid?
             redirect_to categories_path, notice: "Category Successfully Created"
         else 
             render 'new'
         end 
     end 
+    def update 
+        @category = Category.find(params[:id])
+        if @category.update(category_params)
+            redirect_to category_path(@category), notice: "category Successfully Updated" 
+        else 
+            render :edit 
+        end
+    end
     def destroy 
         @category = Category.find(params[:id]).destroy
         redirect_to categories_path

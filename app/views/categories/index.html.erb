@@ -1,5 +1,7 @@
 <% @categories.each do |category| %>
-    <%= category.title %><br>
-    <%= category.product_ids %><br>
-    <%end%>
-    
+    <h3><%= link_to category.title, category %>
+    <%= link_to "Edit", edit_category_path(category) %>
+    <%= link_to "Delete", category_path(category), method: :delete, class: "destroy", data: {confirm: "Are you sure?"} %></h3>
+    Products: <%= category.product_ids %><br><br>
+<%end%>
+
