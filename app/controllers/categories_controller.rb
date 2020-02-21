@@ -1,8 +1,12 @@
 class CategoriesController < ProductsController
     before_action :authenticate_user!
     def index 
-        @categories = Category.all 
+        if params[:search]
+            @categories = Category.search_category(params[:search])
+        else
+            @categories = Category.all.order(:title) 
     end 
+end
     def show 
         @category = Category.find(params[:id])
     end 
@@ -34,7 +38,7 @@ class CategoriesController < ProductsController
     end 
     private 
     def category_params
-        params.require(:category).permit(:title)
+        params.require(:category).permit(:title, products_attributes: [:name] )
     end 
 end
 

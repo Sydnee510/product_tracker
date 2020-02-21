@@ -2,7 +2,13 @@ class ProductsController < ApplicationController
     #before_action :set_product, only: [:show, :edit, :update, :destroy]
     before_action :authenticate_user!
     def index 
-        @products = Product.all 
+        if params[:search]
+           
+                @products = Product.searched(params[:search])
+            else
+                @products = Product.all.order(:category_id) 
+        end 
+        
     end 
     def show 
         @product = Product.find(params[:id])
@@ -36,6 +42,6 @@ class ProductsController < ApplicationController
 
     private 
     def product_params
-        params.require(:product).permit(:name, :description, :price, :user_id, :category_id)
+        params.require(:product).permit(:name, :description, :price, :user_id, :category_id, category_attributes: [:title])
     end 
 end

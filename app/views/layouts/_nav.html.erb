@@ -41,7 +41,7 @@ li a:hover {
   border: none;
   outline: none;
   color: gold;
-  padding: 14px 16px;
+
   background-color: inherit;
   font-family: inherit;
   margin: 0;
@@ -86,11 +86,11 @@ li a:hover {
     <% else %>
         
     <div class="dropdown">
-    <button class="dropbtn">Categories 
+    <button class="dropbtn"> 
+    <li><%= link_to "Categories", categories_path %></li>
       <i class="fa fa-caret-down"></i>
     </button>
       <div class="dropdown-content">
-      
       <a href="categories/1">Body collection</a>
       <a href="categories/2">Hair collection</a>
       <a href="categories/3">Wellness collection</a>
