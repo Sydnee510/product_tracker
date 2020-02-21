@@ -1,0 +1,6 @@
+<h1>Search Categories</h1>
+<h4>
+<%= form_tag categories_path, :method => 'get' do %>   
+    <%= text_field_tag :search, params[:search] %>   
+    <%= submit_tag "Search", name: nil %> </h4>
+<% end %>

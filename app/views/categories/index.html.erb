@@ -1,3 +1,10 @@
+<h1>Search Categories</h1>
+<h4>
+<%= form_tag categories_path, :method => 'get' do %>   
+    <%= text_field_tag :search, params[:search] %>   
+    <%= submit_tag "Search", name: nil %> </h4>
+<% end %>
+<br>
 <% @categories.each do |category| %>
     <h3><%= link_to category.title, category %>
     <%= link_to "Edit", edit_category_path(category) %>
