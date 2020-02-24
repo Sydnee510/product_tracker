@@ -1,4 +1,30 @@
 <nav> 
+    <ul>
+    <li><%= link_to "Home", root_path %></li>
+    <% if !user_signed_in? %>
+        <li><%= link_to "Signup", new_user_registration_path %></li>
+        <li><%= link_to "Login", new_user_session_path %></li>
+    <% else %>
+        
+    <div class="dropdown">
+    <button class="dropbtn"> 
+    <li><%= link_to "Categories", categories_path %></li>
+      <i class="fa fa-caret-down"></i>
+    </button>
+      <div class="dropdown-content">
+      <a href="categories/1">Body collection</a>
+      <a href="categories/2">Hair collection</a>
+      <a href="categories/3">Wellness collection</a>
+      </div>
+    </div> 
+        <li><%= link_to "Products", products_path %></li>
+        <li><%= link_to "Logout", destroy_user_session_path, method:"delete" %></li>
+        <li>WELCOME!! <%= current_user.username %></li><br>
+        <li><%= current_user.email %></li>
+        <% end %>
+    </ul>
+</nav>
+
 <style>
 body {
   background-image: url('https://i.pinimg.com/originals/90/93/ed/9093ed6b9cda1cfa683ade4549a9feaa.jpg');
@@ -9,26 +35,26 @@ body {
   
  
 }
-ul {
+nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
   background-color: black;
 }
-li {
+nav li {
   float: left;
   color: gold;
 }
 
-li a {
+nav li a {
   display: block;
   color: gold;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
 }
-li a:hover {
+nav li a:hover {
   background-color: #555;
 }
 .dropdown {
@@ -78,28 +104,3 @@ li a:hover {
 }
 .i
 </style>
-    <ul>
-    <li><%= link_to "Home", root_path %></li>
-    <% if !user_signed_in? %>
-        <li><%= link_to "Signup", new_user_registration_path %></li>
-        <li><%= link_to "Login", new_user_session_path %></li>
-    <% else %>
-        
-    <div class="dropdown">
-    <button class="dropbtn"> 
-    <li><%= link_to "Categories", categories_path %></li>
-      <i class="fa fa-caret-down"></i>
-    </button>
-      <div class="dropdown-content">
-      <a href="categories/1">Body collection</a>
-      <a href="categories/2">Hair collection</a>
-      <a href="categories/3">Wellness collection</a>
-      </div>
-    </div> 
-        <li><%= link_to "Products", products_path %></li>
-        <li><%= link_to "Logout", destroy_user_session_path, method:"delete" %></li>
-        <li>WELCOME!! <%= current_user.username %></li><br>
-        <li><%= current_user.email %></li>
-        <% end %>
-    </ul>
-</nav>
