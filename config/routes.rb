@@ -7,10 +7,11 @@ Rails.application.routes.draw do
   end
   get '/products/search', to: 'products#search', as: 'products_search'
   resources :products
-  resources :categories
- 
-  resources :categories, only: [:show] do 
-    resources :products, only: [:new, :show]
+  #resources :categories
+  
+  resources :categories do 
+    resources :categories, only: [:index, :new, :show]
+    resources :products, only: [:index, :new, :show]
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
