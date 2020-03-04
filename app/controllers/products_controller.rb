@@ -41,6 +41,7 @@ class ProductsController < ApplicationController
     end
     def expensive 
         @products = Product.expensive
+        render :index
     end
 
     private 

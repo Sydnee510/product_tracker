@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   get '/products/search', to: 'products#search', as: 'products_search'
   get 'products/expensive', to: 'products#expensive', as: 'products_expensive'
   resources :products
-  #resources :categories
   
   resources :categories do 
     resources :categories, only: [:index, :new, :show]

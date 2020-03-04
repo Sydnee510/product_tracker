@@ -4,8 +4,10 @@
     <%= text_field_tag :search, params[:search] %>   
     <%= submit_tag "Search", name: nil %> </h4>
 <% end %>
-
 <br>
+<%= link_to "Expensive Products" , products_expensive_path %>
+<br>
+
 <h1>All Products</h1>
 <%= link_to 'Create Product', new_product_path %><br> <br>
 
