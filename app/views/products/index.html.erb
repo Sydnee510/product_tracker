@@ -1,5 +1,5 @@
 <h4>Search Products</h4>
-<h4>
+
 <%= form_tag products_path, :method => 'get' do %>   
     <%= text_field_tag :search, params[:search] %>   
     <%= submit_tag "Search", name: nil %> </h4>
@@ -8,6 +8,8 @@
 <br>
 <h1>All Products</h1>
 <%= link_to 'Create Product', new_product_path %><br> <br>
+
+<h3>Items sorted by category</h3>
 <% @products.each do |product| %>
     
     <%= link_to product.name, product %><br>
