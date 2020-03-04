@@ -9,5 +9,5 @@ class Product <  ApplicationRecord
      validates :category, presence: true
 
      scope :searched, ->(search_term) { where("name LIKE ?", "%#{search_term}%") }
-    
+     scope :expensive, ->{ where("price > 50")} 
 end

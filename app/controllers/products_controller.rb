@@ -22,7 +22,7 @@ class ProductsController < ApplicationController
     def create 
         @product = Product.new(product_params)
         if  @product.save 
-            redirect_to products_path, notice: "Product Successfully Created"
+            redirect_to product_path(@product), notice: "Product Successfully Created"
         else 
             render 'new'
         end 
@@ -38,6 +38,9 @@ class ProductsController < ApplicationController
         else 
             render :edit 
         end
+    end
+    def expensive 
+        @products = Product.expensive
     end
 
     private 

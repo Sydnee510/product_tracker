@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     get 'signup', to: 'devise/registration#new'
   end
   get '/products/search', to: 'products#search', as: 'products_search'
+  get 'products/expensive', to: 'products#expensive', as: 'products_expensive'
   resources :products
   #resources :categories
   
